@@ -1,0 +1,26 @@
+PESOS DOS MODELOS TREINADOS
+============================
+
+Os arquivos de pesos sao gerados automaticamente ao rodar o
+notebook_treinamento.ipynb ate o final:
+
+  cnn1_baseline_best.pth      -> pesos da CNN 1 Baseline (melhor val_acc)
+  cnn2_regularized_best.pth   -> pesos da CNN 2 Regularizada (melhor val_acc)
+
+Para gerar: abra notebook_treinamento.ipynb e faca Kernel > Restart & Run All.
+
+ORDEM DAS CLASSES (importante!):
+O ImageFolder do PyTorch ordena as classes alfabeticamente:
+  0: critical_fragment
+  1: orbital_structure
+  2: satellite_operational
+  3: small_debris
+
+Esta e a ordem usada em CLASS_NAMES (architectures.py) e em todo o projeto.
+
+Para carregar os pesos depois do treino:
+    from models.architectures import CNN2_Regularized
+    import torch
+    model = CNN2_Regularized()
+    model.load_state_dict(torch.load('models/cnn2_regularized_best.pth'))
+    model.eval()
