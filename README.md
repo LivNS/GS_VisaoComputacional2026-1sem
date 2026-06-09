@@ -128,4 +128,10 @@ e augmentation (flip, rotação, color jitter) aplicado apenas no treino.
 
 ---
 
+## Link Youtube
+
+https://youtu.be/ZUAvVeypENA
+
+---
+
 *Global Solution 2026 — FIAP · Applied Computer Vision*
